@@ -225,7 +225,7 @@ namespace MvvmCross.Plugins.DownloadCache
         private async Task<T> ImageFromLocalFileAsync(string path)
         {
             var loader = Mvx.Resolve<IMvxLocalFileImageLoader<T>>();
-            var img = await loader.Load(path, true, MaxWidth, MaxHeight).ConfigureAwait(false);
+            var img = await loader.Load(path, false, MaxWidth, MaxHeight).ConfigureAwait(false);
             return img.RawImage;
         }
 
